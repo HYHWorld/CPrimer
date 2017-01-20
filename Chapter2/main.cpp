@@ -48,6 +48,6 @@ void main() {
 	//int i = d;	//编译通过 waring
 	//int j = { d };	//编译不通过 error C11新特性
 
-
+	int i = 10;
 
 }
