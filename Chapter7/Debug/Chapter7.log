@@ -1,0 +1,6 @@
+﻿  Sales_data.cpp
+  main.cpp
+f:\vsworkplace\cprimer\chapter7\main.cpp(42): warning C4804: “<”: 在操作中使用类型“bool”不安全
+  正在生成代码...
+  Chapter7.vcxproj -> F:\VSWorkPlace\CPrimer\Debug\Chapter7.exe
+  Chapter7.vcxproj -> F:\VSWorkPlace\CPrimer\Debug\Chapter7.pdb (Full PDB)
