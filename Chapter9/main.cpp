@@ -2,6 +2,8 @@
 #include <list>
 #include <deque>
 #include <vector>
+#include<forward_list>
+#include<string>
 using namespace std;
 int main() {
 	//顺序容器
@@ -90,6 +92,52 @@ int main() {
 	//			4.反向迭代器
 	//			5.类型别名
 	
+	//begin和end成员
+	//		用途:形成一个包含容器所有元素的迭代器范围
+	//		多个版本:
+	//			1.带r版本(rbegin/rend)返回反向迭代器
+	//			2.带c版本(cbegin/cend)返回const迭代器
+	//			3.不以c开头的函数(begin/end)是被重载过的
+	//				1.一个const成员,返回const_iterator
+	//				2.一个非常量成员,返回iterator
+	//					iterator->const_iterator
+	//		c版本是C++11引入的,为了与auto一起使用
+
+	//容器定义和初始化
+	//		每个容器都定义了一个默认构造函数,除array外,其他容器的默认构造函数都会创建一个指定类型的空容器,且都可以接受指定容器大小和元素初始值参数
 	//
+	//将容器初始化为另一个容器的拷贝
+	//		方法:
+	//			1.直接拷贝整个容器
+	//			2.拷贝由一个迭代我对指定的元素范围
+	//		要求:
+	//			使用直接拷贝:两容器的类型及其元素类型必须匹配
+	//			使用迭代器指定元素范围拷贝:元素类型匹配  //可以拷贝某容器的子序列
+	//				vector<const char*> articles = { "a","an","the" };
+	//				forward_list<string> words(articles.begin(), articles.end());
+	//				for (auto x : words) {
+	//					cout << x <<endl;
+	//				}
+	//
+	//列表初始化
+	//		新标准下可以对一个容器进行列表初始
+	//			list<string> authors = { "Militon","Shakespeare","Austen" };
+	//		对array之外的容器类型初始化列表还隐含地指定了容器的大小
+	//
+	//与顺序容器相关的构造函数
+	//		接受一个容器大小和一个元素初始值(可选)
+	//		如果类类型没有默认构造需要显式的元素初始值
+	//
+	//array有固定的大小
+	//		定义一个array时需要指定容器大小
+	//			array<string, 10> arr;
+	//		使用array的类型也需要指定大小
+	//			array<string,10>::size_type
+	//		不支持普通的构造函数,一个默认构造的array是非空的,元素执行默认构造,如果使用列表初始化,没有默认构造的情况下,元素个数应该与array大小相同
+	//			array<string,10> arr = {"h"};
+	//		支持对象拷贝或赋值
+	
+	//赋值和swap
+	//		
 	return 0;
 }
